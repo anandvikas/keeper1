@@ -1,0 +1,10 @@
+.headSec{
+    
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(71, 102, 0);
+    padding: 20px;
+}
+.headSec>h1{
+    color: white;
+}

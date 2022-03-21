@@ -1,0 +1,19 @@
+.previewSec{
+    flex: 50%;
+    height: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    align-self: flex-start;    
+}
+.showCard{
+    margin: 10px;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0px 0px 10px 1px gray;    
+    border-radius: 20px;
+    background-color: white;
+}
+.showCard>h3, .showCard>p, .showCard>button{
+    margin: 5px;
+}

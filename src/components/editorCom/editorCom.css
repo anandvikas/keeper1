@@ -1,0 +1,66 @@
+.editSec{
+    flex: 50%;
+    height: inherit;
+    padding: 10px;
+    background-color: rgb(230, 230, 230);
+}
+.choose{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: auto;
+    padding: 10px;    
+}
+.choose>button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(71, 102, 0, 0.3);
+    cursor: pointer;
+}
+.choose>button:hover{
+    background-color: rgba(71, 102, 0, 0.5);
+}
+.workSpace{
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    margin-top: 30px;
+    box-shadow: 0px 0px 20px 2px gray;
+}
+.workSpace>form{
+    text-align: right;
+    padding: 10px;
+}
+.workSpace>form>input{
+    width: 100%;   
+    font-size: 20px; 
+    /* padding: 10px; */
+    outline: none;
+    border: none;
+}
+.workSpace>form>textarea{
+    width: 100%;  
+    font-size: 15px;  
+    /* padding: 10px; */
+    outline: none;
+    border: none;
+}
+.workSpace>form>button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px; 
+}
+.showSpace{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.showCard{
+    padding: 10px;
+}
+.hidden{
+    display: none;
+}
