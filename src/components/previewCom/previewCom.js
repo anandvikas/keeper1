@@ -9,7 +9,7 @@ const Preview = (props) => {
                         <div className='showCard' key={ind}>
                             <h3>{val.title}</h3>
                             <p>{val.cont}</p>
-                            <button onClick={()=>{props.removeFromList(ind)}}>remove</button>
+                            <button id='rmBtn' onClick={()=>{props.removeFromList(ind)}}>remove</button>
                         </div>
                     )
                 })

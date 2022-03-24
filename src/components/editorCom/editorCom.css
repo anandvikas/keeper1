@@ -3,6 +3,7 @@
     height: inherit;
     padding: 10px;
     background-color: rgb(230, 230, 230);
+    position: relative;
 }
 .choose{
     display: flex;
@@ -24,34 +25,46 @@
 }
 .workSpace{
     width: 70%;
+    max-width: 600px;
     background-color: white;
     margin: auto;
     margin-top: 30px;
     box-shadow: 0px 0px 20px 2px gray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.workSpace>form{
+.workSpace>form, .workSpace>div{
     text-align: right;
-    padding: 10px;
+    padding: 20px;
+    width: 100%;    
+    height: fit-content;
 }
-.workSpace>form>input{
+.workSpace>form>input, .workSpace>div>input{
     width: 100%;   
     font-size: 20px; 
-    /* padding: 10px; */
+    padding: 10px;
     outline: none;
     border: none;
 }
 .workSpace>form>textarea{
     width: 100%;  
     font-size: 15px;  
-    /* padding: 10px; */
+    padding: 10px;
     outline: none;
     border: none;
 }
-.workSpace>form>button{
+#addBtn{
     padding: 10px 20px;
     outline: none;
     border: none;
     border-radius: 20px; 
+    background-color: rgb(173, 173, 173);
+    /* display: block; */
+}
+#addBtn:hover{
+    background-color: gray;
 }
 .showSpace{
     display: flex;
@@ -63,4 +76,11 @@
 }
 .hidden{
     display: none;
+}
+#canvas1{
+    display: block;
+    width: auto;
+    height: auto;
+    border: 2px solid gray;
+    margin-top: 10px;
 }
