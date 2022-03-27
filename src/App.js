@@ -5,7 +5,11 @@ import Preview from "./components/previewCom/previewCom";
 import Editor from "./components/editorCom/editorCom";
 
 const App = () => {
+    // this will setup the initial localStorage task 
     let backedData = JSON.parse(localStorage.getItem('noteStore'))
+    if(backedData === null){
+        backedData = [{title: "Hello", cont: "this is a dummy note. You can delete it."}]
+    }    
     const [noteList, updateNoteList] = useState(backedData)    
     
     // THIS WILL ADD NOTE TO LIST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -39,7 +43,7 @@ const App = () => {
                     addToList={addToList}
                 />                
                 <Preview
-                    noteList={JSON.parse(localStorage.getItem('noteStore'))}
+                    noteList={noteList}
                     removeFromList={removeFromList}
                 />
             </div>
