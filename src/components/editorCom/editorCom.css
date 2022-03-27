@@ -1,19 +1,26 @@
-.editSec{
-    flex: 50%;
-    height: inherit;
+.editSec{    
+    height: fit-content;
+    min-height: 300px;
     padding: 10px;
     background-color: rgb(230, 230, 230);
-    position: relative;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .choose{
     display: flex;
     justify-content: space-evenly;
-    width: 70%;
+    width: 100%;
+    max-width: 800px;
     margin: auto;
     padding: 10px;    
 }
-.choose>button{
-    padding: 10px 20px;
+.choose>button{    
+    margin: 10px;
+    font-size: 100px;
+    padding: 50px;
+    color: white;
     outline: none;
     border: none;
     border-radius: 20px;
@@ -24,22 +31,26 @@
     background-color: rgba(71, 102, 0, 0.5);
 }
 .workSpace{
-    width: 70%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 1000px;
+    height: 70vh;    
     background-color: white;
-    margin: auto;
-    margin-top: 30px;
-    box-shadow: 0px 0px 20px 2px gray;
+    margin: 50px auto;    
+    box-shadow: 0px 0px 20px 2px gray;  
+    position: relative;  
+    transition: all;   
+    transition: .3s;
+}
+.workSpace>form, .workSpace>div{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
-.workSpace>form, .workSpace>div{
-    text-align: right;
+    transform: translate(-50%, -50%);    
     padding: 20px;
-    width: 100%;    
-    height: fit-content;
+    width: 100%;  
+    height: 100%;  
+    display: flex;
+    flex-direction: column;    
 }
 .workSpace>form>input, .workSpace>div>input{
     width: 100%;   
@@ -49,19 +60,21 @@
     border: none;
 }
 .workSpace>form>textarea{
-    width: 100%;  
+    width: 100%; 
+    height: inherit; 
     font-size: 15px;  
     padding: 10px;
     outline: none;
     border: none;
 }
 #addBtn{
+    margin-top: 20px;
     padding: 10px 20px;
     outline: none;
     border: none;
     border-radius: 20px; 
     background-color: rgb(173, 173, 173);
-    /* display: block; */
+    align-self: flex-end;
 }
 #addBtn:hover{
     background-color: gray;

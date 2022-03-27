@@ -5,37 +5,42 @@ import Preview from "./components/previewCom/previewCom";
 import Editor from "./components/editorCom/editorCom";
 
 const App = () => {
-    const [ noteList, updateNoteList] = useState([])
+    const [noteList, updateNoteList] = useState([])    
+    // localStorage.setItem('noteStore', JSON.stringify(noteList))
     // THIS WILL ADD NOTE TO LIST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    const addToList = (note) => {
-        updateNoteList((prev)=>{
-            return [...prev, note]
+    const addToList = (note) => {        
+        updateNoteList((prev) => {
+            let updated = [...prev, note]
+            // updating local storage 
+            localStorage.setItem('noteStore', JSON.stringify(updated))
+            return updated
         })
+        
     }
     // THIS WILL REMOVE NOTE FROM LIST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     const removeFromList = (index) => {
-        updateNoteList((prev)=>{
-            let filtered = prev.filter((val, ind)=>{
+        updateNoteList((prev) => {
+            let updated = prev.filter((val, ind) => {
                 return index !== ind
             })
-            return filtered
-        })
+            // updating local storage 
+            localStorage.setItem('noteStore', JSON.stringify(updated))
+            return updated
+        })        
     }
     return (
         <>
-            <Header/>
+            <Header />
             <div className="edit-prev">
-                <Preview
-                    noteList={noteList}
-                    removeFromList={removeFromList}
-                />
                 <Editor
                     addToList={addToList}
                 />
+                {/* <hr /> */}
+                <Preview
+                    noteList={JSON.parse(localStorage.getItem('noteStore'))}
+                    removeFromList={removeFromList}
+                />
             </div>
-            {/* <div id="checking">
-                vikas
-            </div> */}
         </>
     )
 }
