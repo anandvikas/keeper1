@@ -29,16 +29,13 @@ const WritingBoard = (props) => {
         props.UchooseV('choose')
     }
     return (
-        <>
-            <div className={props.tnv}>
-            <CloseIcon id='closeIcon'/>
-                <form >
-                    <input type="text" placeholder="title" autoComplete="off" name="title" value={noteT.title} onChange={notingT} /><br />
-                    <textarea rows="5" column="" placeholder="content ..." name="cont" value={noteT.cont} onChange={notingT} /><br />
-                    <hr/>
-                    <button id="addBtn" onClick={addNoteT}>Save</button>
-                </form>
-            </div>
+        <>            
+            <form >
+                <input type="text" placeholder="title" autoComplete="off" name="title" value={noteT.title} onChange={notingT} /><br />
+                <textarea rows="5" column="" placeholder="content ..." name="cont" value={noteT.cont} onChange={notingT} /><br />
+                <hr/>
+                <button id="addBtn" onClick={addNoteT}>Save</button>
+            </form>            
         </>
     )
 }
@@ -57,15 +54,21 @@ const Editor = (props) => {
     return (
         <section className="editSec">
             <div className={chhoseV}>
-                <Tooltip title="Write" placement="top"><Button onClick={toggleText}><CreateIcon fontSize='inherit'/></Button></Tooltip>
-                <Tooltip title="Draw" placement="top"><Button onClick={() => { alert('this feature is under development') }}><PaletteIcon fontSize='inherit'/></Button></Tooltip>
+                <Tooltip title="Write" placement="top" arrow><Button onClick={toggleText}><CreateIcon fontSize='inherit'/></Button></Tooltip>                
+                
+                <Tooltip title="Draw" placement="top" arrow><Button onClick={() => { alert('this feature is under development') }}><PaletteIcon fontSize='inherit'/></Button></Tooltip>
+                
             </div>
-            <WritingBoard
-                tnv={tnv}
-                Utnv={Utnv}
-                UchooseV={UchooseV}
-                addToList={props.addToList}
-            />            
+            <div className={tnv}>
+                <Tooltip title="Close" placement="left" arrow><CloseIcon id='closeIcon' onClick={()=>{Utnv('hidden'); UchooseV('choose')}}/></Tooltip>
+                {/* <CloseIcon id='closeIcon' onClick={()=>{Utnv('hidden'); UchooseV('choose')}}/> */}
+                <WritingBoard
+                    tnv={tnv}
+                    Utnv={Utnv}
+                    UchooseV={UchooseV}
+                    addToList={props.addToList}
+                /> 
+            </div>           
         </section>
     )
 }

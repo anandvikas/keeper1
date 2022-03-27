@@ -41,6 +41,13 @@
     transition: all;   
     transition: .3s;
 }
+#closeIcon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 5;
+    cursor: pointer;
+}
 .workSpace>form, .workSpace>div{
     position: absolute;
     top: 50%;

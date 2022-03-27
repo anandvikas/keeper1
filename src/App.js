@@ -5,8 +5,9 @@ import Preview from "./components/previewCom/previewCom";
 import Editor from "./components/editorCom/editorCom";
 
 const App = () => {
-    const [noteList, updateNoteList] = useState([])    
-    // localStorage.setItem('noteStore', JSON.stringify(noteList))
+    let backedData = JSON.parse(localStorage.getItem('noteStore'))
+    const [noteList, updateNoteList] = useState(backedData)    
+    
     // THIS WILL ADD NOTE TO LIST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     const addToList = (note) => {        
         updateNoteList((prev) => {
@@ -18,12 +19,14 @@ const App = () => {
         
     }
     // THIS WILL REMOVE NOTE FROM LIST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    const removeFromList = (index) => {
+    const removeFromList = (index) => {        
         updateNoteList((prev) => {
+            console.log(prev)
             let updated = prev.filter((val, ind) => {
                 return index !== ind
             })
             // updating local storage 
+            console.log(updated)
             localStorage.setItem('noteStore', JSON.stringify(updated))
             return updated
         })        
@@ -34,8 +37,7 @@ const App = () => {
             <div className="edit-prev">
                 <Editor
                     addToList={addToList}
-                />
-                {/* <hr /> */}
+                />                
                 <Preview
                     noteList={JSON.parse(localStorage.getItem('noteStore'))}
                     removeFromList={removeFromList}

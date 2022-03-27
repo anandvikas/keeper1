@@ -6,6 +6,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 const Preview = (props) => {
     let noteList = props.noteList
+    // console.log(noteList)
     return (
         <section className="previewSec">
             {
